@@ -32,11 +32,11 @@ jobs:
       - name: Install dependencies
         run: cd docs && pnpm install
       - name: Build
-        run: pnpm build
+        run: cd docs && pnpm build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./out
+          path: ./docs/dist
 
   deploy:
     environment:
